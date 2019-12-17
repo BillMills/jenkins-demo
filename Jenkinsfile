@@ -19,7 +19,7 @@ pipeline {
                 sh 'echo ${DTR_FQDN_PORT} ; \
                     docker image build -t ${DTR_FQDN_PORT}/engineering/jenkins-demo:build-${BUILD_ID} . ; \
                     docker login -u jenkins -p ${DTR_ACCESS_KEY} ${DTR_FQDN_PORT} ; \
-                    docker image push ${DTR_FQDN}/engineering/jenkins-demo:build-${BUILD_ID}'
+                    docker image push ${DTR_FQDN_PORT}/engineering/jenkins-demo:build-${BUILD_ID}'
             }
         }
     }
